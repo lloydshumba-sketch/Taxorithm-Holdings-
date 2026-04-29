@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Taxorithm Holdings - Integrated tax, advisory, audit, forensics, technology, data analytics and commercial solutions in Zimbabwe.">
+  <meta name="theme-color" content="#06213f">
+  <meta property="og:title" content="Taxorithm Holdings">
+  <meta property="og:description" content="Zimbabwe tax, advisory, audit, forensics and technology solutions.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/taxorithm-logo.svg">
+  <title>Taxorithm Holdings | Zimbabwe Advisory, Tax & Technology</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue: #0057b8;
+      --deep-blue: #06213f;
+      --gold: #c9a227;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9e1ec;
+      --soft: #f5f8fc;
+      --white: #ffffff;
+      --black: #000000;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      background: var(--white); color: var(--ink); line-height: 1.65;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1180px, 92%); margin: 0 auto; }
+    .topbar { background: var(--deep-blue); color: #dbeafe; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.10); }
+    .topbar-inner { min-height: 38px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .topbar span { color: var(--gold); font-weight: 700; }
+    .navbar { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.98); border-bottom: 1px solid var(--line); }
+    .nav-inner { min-height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
+    .brand { display: flex; align-items: center; gap: 14px; min-width: 250px; }
+    .brand-logo { width: 58px; height: 58px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--line); background: var(--white); flex-shrink: 0; }
+    .brand-logo img { width: 54px; height: 54px; }
+    .brand-name { color: var(--deep-blue); font-size: 20px; line-height: 1; font-weight: 800; letter-spacing: -0.02em; }
+    .brand-subtitle { margin-top: 6px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.16em; font-size: 10px; font-weight: 700; }
+    .nav-links { display: flex; align-items: center; justify-content: flex-end; gap: 24px; font-size: 14px; color: var(--ink); font-weight: 500; }
+    .nav-links a { padding: 32px 0; border-bottom: 2px solid transparent; }
+    .nav-links a:hover { color: var(--blue); border-bottom-color: var(--gold); }
+    .nav-cta { color: var(--blue); font-weight: 700; border-left: 1px solid var(--line); padding-left: 22px; white-space: nowrap; }
+    .menu-btn { display: none; background: transparent; border: 0; color: var(--deep-blue); font-size: 30px; cursor: pointer; }
+    .mobile-menu { display: none; position: fixed; inset: 0; z-index: 200; background: var(--deep-blue); padding: 80px 28px; }
+    .mobile-menu.active { display: block; }
+    .close-btn { position: absolute; top: 26px; right: 26px; background: transparent; border: 1px solid rgba(255,255,255,0.25); color: var(--white); width: 44px; height: 44px; font-size: 28px; cursor: pointer; }
+    .mobile-links { display: grid; gap: 0; border-top: 1px solid rgba(255,255,255,0.15); }
+    .mobile-links a { color: var(--white); font-size: 22px; font-weight: 600; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.15); }
+    .hero { background: linear-gradient(90deg, var(--deep-blue) 0%, var(--deep-blue) 46%, var(--soft) 46%, var(--soft) 100%); color: var(--white); min-height: 560px; display: flex; align-items: stretch; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 0.85fr; align-items: stretch; min-height: 560px; }
+    .hero-content { padding: 92px 64px 92px 0; display: flex; flex-direction: column; justify-content: center; }
+    .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 0.18em; font-size: 12px; font-weight: 800; margin-bottom: 20px; }
+    h1 { color: var(--white); font-size: clamp(46px, 6vw, 76px); line-height: 0.98; letter-spacing: -0.05em; font-weight: 800; max-width: 760px; margin-bottom: 28px; }
+    .hero-content p { color: #dbeafe; font-size: 19px; line-height: 1.75; max-width: 660px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 36px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 13px 22px; border: 1px solid transparent; font-size: 14px; font-weight: 700; transition: 0.2s ease; cursor: pointer; }
+    .btn-primary { background: var(--gold); color: var(--deep-blue); }
+    .btn-primary:hover { background: var(--white); }
+    .btn-outline { border-color: rgba(255,255,255,0.45); color: var(--white); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-panel { background: var(--soft); color: var(--ink); display: flex; align-items: center; padding: 76px 0 76px 70px; }
+    .location-card { background: var(--white); border-left: 6px solid var(--blue); padding: 40px; width: 100%; box-shadow: 0 16px 40px rgba(6,33,63,0.08); }
+    .location-card h2 { color: var(--deep-blue); font-size: 36px; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 18px; }
+    .location-card p { color: var(--muted); margin-bottom: 18px; }
+    .location-meta { display: grid; gap: 10px; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 14px; }
+    section { padding: 88px 0; }
+    .section-head { display: grid; grid-template-columns: 0.38fr 1fr; gap: 56px; align-items: start; margin-bottom: 46px; }
+    .section-label { color: var(--blue); text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px; font-weight: 800; padding-top: 8px; }
+    .section-title h2 { color: var(--deep-blue); font-size: clamp(32px, 4vw, 52px); line-height: 1.08; letter-spacing: -0.045em; font-weight: 800; margin-bottom: 18px; }
+    .section-title p { color: var(--muted); font-size: 17px; max-width: 780px; }
+    .divider { height: 1px; background: var(--line); margin: 0 0 46px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+    .content-block h3 { color: var(--deep-blue); font-size: 24px; letter-spacing: -0.025em; margin-bottom: 16px; }
+    .content-block p { color: var(--muted); margin-bottom: 18px; }
+    .list-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .list-item { padding: 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); min-height: 210px; background: var(--white); }
+    .list-item .number { color: var(--gold); font-size: 13px; font-weight: 800; margin-bottom: 14px; }
+    .list-item h3 { color: var(--deep-blue); font-size: 21px; letter-spacing: -0.025em; margin-bottom: 12px; }
+    .list-item p { color: var(--muted); font-size: 15px; }
+    .soft-section { background: var(--soft); }
+    .leadership-box { display: grid; grid-template-columns: 0.34fr 1fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--white); }
+    .leader-name-box { padding: 42px; border-right: 1px solid var(--line); }
+    .leader-initial { width: 74px; height: 74px; border: 1px solid var(--line); background: var(--white); color: var(--black); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; margin-bottom: 24px; }
+    .leader-name-box h3 { color: var(--deep-blue); font-size: 28px; margin-bottom: 8px; letter-spacing: -0.03em; }
+    .leader-name-box span { color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; font-size: 11px; font-weight: 800; }
+    .leader-text { padding: 42px; color: var(--muted); }
+    .leader-text p + p { margin-top: 18px; }
+    .split-feature { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: start; }
+    .feature-panel { background: var(--deep-blue); color: var(--white); padding: 44px; position: sticky; top: 110px; }
+    .feature-panel h2 { color: var(--white); font-size: 42px; line-height: 1.08; letter-spacing: -0.04em; margin-bottom: 18px; }
+    .feature-panel p { color: #dbeafe; }
+    .tax-grid { display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .tax-row { display: grid; grid-template-columns: 0.36fr 1fr; gap: 34px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+    .tax-row h3 { color: var(--deep-blue); font-size: 19px; letter-spacing: -0.02em; }
+    .tax-row p { color: var(--muted); font-size: 15px; }
+    .cta-band { background: var(--deep-blue); color: var(--white); padding: 72px 0; }
+    .cta-inner { display: grid; grid-template-columns: 1fr auto; gap: 34px; align-items: center; }
+    .cta-inner h2 { color: var(--white); font-size: clamp(32px, 4vw, 52px); line-height: 1.08; letter-spacing: -0.04em; margin-bottom: 14px; }
+    .cta-inner p { color: #dbeafe; max-width: 760px; }
+    form { background: var(--soft); border: 1px solid var(--line); padding: 36px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    label { display: block; color: var(--deep-blue); font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 800; margin-bottom: 8px; }
+    input, select, textarea { width: 100%; font: inherit; background: var(--white); border: 1px solid var(--line); padding: 14px; margin-bottom: 18px; color: var(--ink); }
+    input:focus, select:focus, textarea:focus { outline: 2px solid rgba(0,87,184,0.16); border-color: var(--blue); }
+    .full-btn { width: 100%; background: var(--blue); color: var(--white); border: 0; }
+    footer { background: #031529; color: #cbd5e1; padding: 58px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 50px; margin-bottom: 48px; }
+    footer h4 { color: var(--white); text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px; margin-bottom: 18px; }
+    footer ul { list-style: none; display: grid; gap: 10px; }
+    footer a:hover { color: var(--gold); }
+    .copyright { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 22px; color: #94a3b8; font-size: 12px; display: flex; justify-content: space-between; gap: 20px; }
+    .affiliation-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; align-items: stretch; }
+    .affiliation-card { background: var(--white); border: 1px solid var(--line); min-height: 150px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; transition: 0.2s ease; }
+    .affiliation-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 14px 32px rgba(6,33,63,0.08); }
+    .affiliation-card img { max-width: 150px; max-height: 56px; object-fit: contain; filter: grayscale(100%); opacity: 0.9; margin-bottom: 16px; }
+    .affiliation-card span { color: var(--deep-blue); font-weight: 700; font-size: 13px; line-height: 1.35; }
+    .affiliation-note { margin-top: 18px; color: var(--muted); font-size: 12px; max-width: 820px; }
+    .whatsapp { position: fixed; right: 22px; bottom: 22px; width: 54px; height: 54px; background: #25d366; color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; border-radius: 50%; z-index: 90; border: 2px solid var(--white); }
+    @media (max-width: 1100px) {
+      .nav-links, .nav-cta { display: none; }
+      .menu-btn { display: block; }
+      .hero { background: var(--deep-blue); }
+      .hero-inner, .section-head, .two-col, .leadership-box, .split-feature, .cta-inner, .footer-grid { grid-template-columns: 1fr; }
+      .hero-panel { padding: 0 0 70px; background: var(--deep-blue); }
+      .location-card { border-left-color: var(--gold); }
+      .leader-name-box { border-right: 0; border-bottom: 1px solid var(--line); }
+      .feature-panel { position: static; }
+      .list-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      .topbar-inner, .copyright { flex-direction: column; align-items: flex-start; padding: 10px 0; }
+      .brand { min-width: auto; }
+      .brand-logo { width: 50px; height: 50px; }
+      .brand-name { font-size: 17px; }
+      .brand-subtitle { letter-spacing: 0.08em; }
+      .hero-content { padding: 64px 0 42px; }
+      h1 { font-size: 44px; }
+      .list-grid, .form-grid, .tax-row, .affiliation-grid { grid-template-columns: 1fr; }
+      section { padding: 64px 0; }
+      .hero-actions .btn { width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="whatsapp" href="https://wa.me/263652322495" target="_blank" aria-label="Contact Taxorithm Holdings on WhatsApp">☎</a>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div><span>Zimbabwe</span> advisory, tax, audit, forensics and technology solutions</div>
+      <div>lloyd.shumba@excelbusinesschool.uk · 0652322495</div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="Taxorithm Holdings Home">
+        <div class="brand-logo" aria-hidden="true"><img src="assets/taxorithm-logo.svg" alt=""></div>
+        <div><div class="brand-name">Taxorithm Holdings</div><div class="brand-subtitle">Integrated Advisory & Technology</div></div>
+      </a>
+      <div class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#services">Services</a><a href="#leadership">Leadership</a><a href="#industries">Industries</a><a href="#framework">Zimbabwe Framework</a><a href="#insights">Insights</a><a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="nav-cta">Request consultation</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="close-btn" id="closeBtn" type="button" aria-label="Close menu">×</button>
+    <div class="mobile-links"><a href="#about">About</a><a href="#services">Services</a><a href="#leadership">Leadership</a><a href="#industries">Industries</a><a href="#framework">Zimbabwe Framework</a><a href="#insights">Insights</a><a href="#contact">Contact</a></div>
+  </div>
+
+  <header id="home" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content"><div class="eyebrow">Zimbabwe · Tax · Advisory · Audit · Forensics · Technology</div><h1>Taxorithm Holdings</h1><p>A multidisciplinary advisory and technology firm providing tax, financial consulting, internal audit, forensic audit, data analytics, digital transformation, real estate and commercial solutions to businesses, institutions and growth-oriented enterprises.</p><div class="hero-actions"><a href="#services" class="btn btn-primary">Explore services</a><a href="#contact" class="btn btn-outline">Contact us</a></div></div>
+      <aside class="hero-panel"><div class="location-card"><h2>Zimbabwe advisory presence</h2><p>Taxorithm Holdings supports clients through disciplined advisory work, compliance-focused execution and technology-enabled business solutions.</p><div class="location-meta"><div><strong>Office:</strong> Marondera, Zimbabwe</div><div><strong>Email:</strong> lloyd.shumba@excelbusinesschool.uk</div><div><strong>Phone:</strong> 0652322495</div></div></div></aside>
+    </div>
+  </header>
+
+  <main>
+    <section id="about"><div class="container"><div class="section-head"><div class="section-label">About</div><div class="section-title"><h2>Integrated professional, consulting and commercial enterprise.</h2><p>Taxorithm Holdings combines professional discipline with algorithmic thinking. The firm is built on clarity, compliance, confidentiality, data-led insight and future-oriented execution.</p></div></div><div class="divider"></div><div class="two-col"><div class="content-block"><h3>Main objective</h3><p>To operate as an integrated professional, consulting and commercial enterprise delivering high-quality tax advisory and compliance services, financial consulting, strategic advisory, information technology solutions and data-driven services.</p></div><div class="content-block"><h3>Strategic position</h3><p>The business is structured to expand into future-oriented sectors including real estate development, digital transformation, technology ventures and commercial technology products.</p></div></div></div></section>
+
+    <section id="services" class="soft-section"><div class="container"><div class="section-head"><div class="section-label">Services</div><div class="section-title"><h2>Services aligned to modern business needs.</h2><p>Our service offering is designed for businesses requiring technical accuracy, compliance discipline, assurance support, forensic insight and practical commercial execution.</p></div></div><div class="list-grid">
+      <div class="list-item"><div class="number">01</div><h3>Tax Advisory & Compliance</h3><p>Tax planning, registration support, compliance reviews, returns support and advisory services for individuals, corporations and other entities.</p></div>
+      <div class="list-item"><div class="number">02</div><h3>Tax Planning & Structuring</h3><p>Support with tax-efficient transaction structuring, business arrangements and planning decisions within applicable laws and regulations.</p></div>
+      <div class="list-item"><div class="number">03</div><h3>Financial & Strategic Advisory</h3><p>Business structuring, performance improvement, risk management, corporate finance support and strategic decision-making assistance.</p></div>
+      <div class="list-item"><div class="number">04</div><h3>Internal Audit & Controls</h3><p>Internal control reviews, governance assessments, risk-based internal audit support and process improvement recommendations.</p></div>
+      <div class="list-item"><div class="number">05</div><h3>Forensic Audit & Investigations</h3><p>Fraud risk assessments, forensic reviews, transaction tracing, evidence-based investigations and support for loss prevention.</p></div>
+      <div class="list-item"><div class="number">06</div><h3>Risk Management & Compliance</h3><p>Compliance frameworks, regulatory risk reviews, policy development and monitoring structures for responsible business operations.</p></div>
+      <div class="list-item"><div class="number">07</div><h3>IT Systems & Digital Solutions</h3><p>Design, development, implementation and maintenance of systems that improve operations, reporting and financial management.</p></div>
+      <div class="list-item"><div class="number">08</div><h3>Data Analytics & Data Science</h3><p>Data processing, modelling, business intelligence and predictive analysis to support evidence-based decision-making.</p></div>
+      <div class="list-item"><div class="number">09</div><h3>Technology Innovation & Platforms</h3><p>Development of software, digital platforms and integrated technology solutions for transformation and operational efficiency.</p></div>
+      <div class="list-item"><div class="number">10</div><h3>Real Estate Development</h3><p>Property acquisition, development, leasing and property management services linked to long-term commercial growth.</p></div>
+      <div class="list-item"><div class="number">11</div><h3>Technology Products & Gadgets</h3><p>Importation, procurement, distribution, marketing and sale of mobile devices, computers, networking equipment and digital products.</p></div>
+      <div class="list-item"><div class="number">12</div><h3>After-Sales Technical Support</h3><p>Installation, maintenance, repairs, technical support and warranty-related support for technology products and digital equipment.</p></div>
+      <div class="list-item"><div class="number">13</div><h3>Retail, Wholesale & Online Sales</h3><p>Operation of retail, wholesale and online sales channels for technology products and related commercial activities.</p></div>
+      <div class="list-item"><div class="number">14</div><h3>Strategic Partnerships</h3><p>Support for collaborations, joint ventures and partnership models aligned with the company’s multidisciplinary business model.</p></div>
+      <div class="list-item"><div class="number">15</div><h3>Complementary Business Activities</h3><p>Lawful activities incidental, complementary or aligned with the company’s professional, consulting, technology and commercial objectives.</p></div>
+    </div></div></section>
+
+    <section id="leadership"><div class="container"><div class="section-head"><div class="section-label">Leadership</div><div class="section-title"><h2>Led with technical precision and practical judgement.</h2><p>The firm’s leadership approach is deliberately institutional: clear processes, professional judgement, confidentiality and client-focused execution.</p></div></div><div class="leadership-box"><div class="leader-name-box"><div class="leader-initial">LS</div><h3>Lloyd Shumba</h3><span>Managing Partner</span></div><div class="leader-text"><p>Taxorithm Holdings is led by Lloyd Shumba, an experienced tax professional with strong expertise in Zimbabwean taxation, financial reporting and advisory services. Complex regulatory and financial matters are translated into clear, actionable outcomes for clients.</p><p>The firm operates on a disciplined, systems-driven model integrating tax advisory, financial consulting, data analytics and technology solutions. This supports structured, forward-looking engagements aligned with regulatory requirements and modern business demands.</p><p>Under this leadership, Taxorithm Holdings maintains a focus on clarity, confidentiality and performance for individuals, enterprises and institutions seeking professional advisory and technology-enabled solutions.</p></div></div></div></section>
+
+    <section id="industries" class="soft-section"><div class="container"><div class="section-head"><div class="section-label">Industries</div><div class="section-title"><h2>Sector-focused solutions.</h2><p>Taxorithm Holdings supports clients across sectors where tax, finance, governance, data and technology intersect.</p></div></div><div class="list-grid"><div class="list-item"><div class="number">A</div><h3>Financial Services</h3><p>Tax, audit readiness and regulatory advisory for financial institutions and finance-led businesses.</p></div><div class="list-item"><div class="number">B</div><h3>Technology & Startups</h3><p>Structuring, data systems, automation and scalable digital operations.</p></div><div class="list-item"><div class="number">C</div><h3>Real Estate</h3><p>Development, compliance, financing and asset management advisory.</p></div><div class="list-item"><div class="number">D</div><h3>Retail & Trade</h3><p>Tax efficiency, supply chain support, technology products and commercial expansion.</p></div><div class="list-item"><div class="number">E</div><h3>SMEs & Enterprises</h3><p>End-to-end advisory from business setup to growth, systems and optimization.</p></div><div class="list-item"><div class="number">F</div><h3>Public Sector & Non-Profit Organisations</h3><p>Compliance, reporting and governance-focused engagements.</p></div></div></div></section>
+
+    <section id="audit"><div class="container"><div class="section-head"><div class="section-label">Audit & Forensics</div><div class="section-title"><h2>Assurance, internal audit and forensic expertise.</h2><p>Taxorithm Holdings provides structured internal audit, risk assurance and forensic investigation services aligned with professional standards and regulatory expectations.</p></div></div><div class="two-col"><div class="content-block"><h3>Internal Audit</h3><p>Risk-based internal audit engagements designed to evaluate governance, internal controls and operational effectiveness. Focus is placed on identifying weaknesses, strengthening systems and improving accountability.</p></div><div class="content-block"><h3>Forensic Audit</h3><p>Independent forensic investigations including fraud detection, transaction tracing, financial irregularity analysis and evidence-based reporting to support dispute resolution and risk mitigation.</p></div></div></div></section>
+
+    <section id="approach"><div class="container"><div class="section-head"><div class="section-label">Approach</div><div class="section-title"><h2>Structured advisory methodology.</h2><p>Every engagement follows a disciplined process designed to move from diagnosis to implementation with clarity and accountability.</p></div></div><div class="list-grid"><div class="list-item"><div class="number">01</div><h3>Assessment</h3><p>Understanding client objectives, regulatory obligations, risks, systems and commercial context.</p></div><div class="list-item"><div class="number">02</div><h3>Analysis</h3><p>Applying tax, financial, legal, data and technology frameworks to identify options and issues.</p></div><div class="list-item"><div class="number">03</div><h3>Design</h3><p>Developing structured, compliant and commercially practical solutions.</p></div><div class="list-item"><div class="number">04</div><h3>Implementation</h3><p>Supporting execution, documentation, monitoring and refinement.</p></div><div class="list-item"><div class="number">05</div><h3>Control</h3><p>Strengthening internal processes, reporting quality and compliance controls.</p></div><div class="list-item"><div class="number">06</div><h3>Growth</h3><p>Aligning advisory outputs to long-term strategy, scalability and performance.</p></div></div></div></section>
+
+    <section id="framework" class="soft-section"><div class="container split-feature"><div class="feature-panel"><div class="eyebrow">Zimbabwe Framework</div><h2>Tax, legal and professional standards.</h2><p>A concise overview of the frameworks relevant to business advisory, tax compliance, financial reporting, audit, data analytics and forensic work.</p></div><div class="tax-grid"><div class="tax-row"><h3>Zimbabwe Tax Heads</h3><p>Key tax heads include Income Tax, PAYE, VAT, Capital Gains Tax, Withholding Taxes, Customs Duty, Excise Duty and Presumptive Taxes.</p></div><div class="tax-row"><h3>Income Tax & Corporate Tax</h3><p>Companies and individuals are subject to income tax obligations, provisional tax responsibilities and annual compliance requirements.</p></div><div class="tax-row"><h3>PAYE & Employment Taxes</h3><p>Employers deduct PAYE from employment income and remit amounts to the tax authorities in line with employment tax rules.</p></div><div class="tax-row"><h3>VAT & Indirect Taxes</h3><p>VAT applies to taxable supplies and imports, with rules for registration, output tax, input tax, exemptions and zero-rated supplies.</p></div><div class="tax-row"><h3>IFRS Financial Reporting</h3><p>International Financial Reporting Standards support transparent, comparable and reliable financial statements and disclosures.</p></div><div class="tax-row"><h3>Audit & Assurance Standards</h3><p>International Standards on Auditing guide assurance engagements, evidence gathering, independence and professional skepticism.</p></div><div class="tax-row"><h3>Internal Audit Standards</h3><p>Internal audit work is guided by risk-based planning, control evaluation, governance review and professional internal audit principles.</p></div><div class="tax-row"><h3>Data Analytics & Forensics</h3><p>Data analytics, forensic accounting, fraud detection methodologies and digital evidence techniques support risk assessment, compliance monitoring and investigation work.</p></div><div class="tax-row"><h3>Business Law</h3><p>Business operations are shaped by corporate law, contract law, agency principles, fiduciary duties and statutory compliance requirements.</p></div></div></div></section>
+
+    <section id="values" class="soft-section"><div class="container"><div class="section-head"><div class="section-label">Values</div><div class="section-title"><h2>Principles that guide every engagement.</h2><p>Our work is anchored on professional discipline, independence of thought and measurable outcomes.</p></div></div><div class="list-grid"><div class="list-item"><div class="number">V1</div><h3>Integrity</h3><p>Uncompromising adherence to ethical standards and truthful reporting.</p></div><div class="list-item"><div class="number">V2</div><h3>Independence</h3><p>Objective judgement in audit, advisory and investigative work.</p></div><div class="list-item"><div class="number">V3</div><h3>Clarity</h3><p>Complex matters translated into clear, actionable outputs.</p></div><div class="list-item"><div class="number">V4</div><h3>Confidentiality</h3><p>Strict handling of sensitive client information.</p></div><div class="list-item"><div class="number">V5</div><h3>Discipline</h3><p>Structured methodologies and consistent delivery standards.</p></div><div class="list-item"><div class="number">V6</div><h3>Impact</h3><p>Focus on outcomes that improve performance and compliance.</p></div></div></div></section>
+
+    <section id="affiliations" class="soft-section"><div class="container"><div class="section-head"><div class="section-label">Affiliations</div><div class="section-title"><h2>Professional bodies and academic institutions.</h2><p>Taxorithm Holdings is aligned with globally recognised professional and academic institutions, reflecting technical competence and professional credibility.</p></div></div><div class="affiliation-grid"><div class="affiliation-card"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/ACCA_logo.svg" alt="ACCA logo" loading="lazy"><span>ACCA</span></div><div class="affiliation-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Tax_icon.svg" alt="ICTAZ" loading="lazy"><span>Institute of Chartered Tax Accountants of Zimbabwe</span></div><div class="affiliation-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/02/University_logo_placeholder.png" alt="Chinhoyi University of Technology" loading="lazy"><span>Chinhoyi University of Technology</span></div><div class="affiliation-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/02/University_logo_placeholder.png" alt="Zimbabwe Open University" loading="lazy"><span>Zimbabwe Open University</span></div></div><p class="affiliation-note">Logos are shown for professional and academic affiliation context only and do not imply endorsement, partnership or sponsorship unless expressly stated.</p></div></section>
+
+    <section id="credibility"><div class="container"><div class="section-head"><div class="section-label">Why Taxorithm</div><div class="section-title"><h2>Institutional strength. Practical execution.</h2><p>Taxorithm Holdings is structured to deliver disciplined, high-quality advisory work comparable to leading global firms, while remaining agile and commercially focused.</p></div></div><div class="list-grid"><div class="list-item"><div class="number">01</div><h3>Technical Depth</h3><p>Strong grounding in taxation, financial reporting, audit, risk and compliance frameworks.</p></div><div class="list-item"><div class="number">02</div><h3>Integrated Approach</h3><p>Combining tax, finance, data analytics and technology into unified advisory solutions.</p></div><div class="list-item"><div class="number">03</div><h3>Execution Focus</h3><p>Not just advice — structured implementation, monitoring and continuous improvement.</p></div><div class="list-item"><div class="number">04</div><h3>Confidentiality</h3><p>Strict handling of sensitive financial, commercial and strategic client information.</p></div><div class="list-item"><div class="number">05</div><h3>Regulatory Alignment</h3><p>Work aligned with Zimbabwean laws and international standards including IFRS and ISA.</p></div><div class="list-item"><div class="number">06</div><h3>Future-Oriented</h3><p>Positioned at the intersection of finance, technology and data-driven decision-making.</p></div></div></div></section>
+
+    <section id="insights"><div class="container"><div class="section-head"><div class="section-label">Insights</div><div class="section-title"><h2>Knowledge areas.</h2><p>Taxorithm Holdings positions technical knowledge as a practical business tool — not just compliance documentation.</p></div></div><div class="list-grid"><div class="list-item"><div class="number">01</div><h3>IFRS & Financial Reporting</h3><p>Guidance on reporting principles, financial instruments, disclosures and accounting judgement.</p></div><div class="list-item"><div class="number">02</div><h3>Tax Strategy & Compliance</h3><p>Interpretation of tax rules, planning considerations and business compliance obligations.</p></div><div class="list-item"><div class="number">03</div><h3>Data & Technology</h3><p>How analytics, systems and digital tools can improve finance, tax and operational performance.</p></div></div></div></section>
+
+    <section id="governance" class="soft-section"><div class="container"><div class="section-head"><div class="section-label">Governance</div><div class="section-title"><h2>Professional, responsible and confidential.</h2><p>Taxorithm Holdings is built on accountable leadership, ethical conduct, disciplined operations and careful handling of sensitive information.</p></div></div><div class="list-grid"><div class="list-item"><div class="number">G</div><h3>Corporate Governance</h3><p>Professional governance designed to support responsible decision-making, compliance and long-term growth.</p></div><div class="list-item"><div class="number">C</div><h3>Confidential Client Handling</h3><p>Client information, advisory work, business data and sensitive engagements are handled with care and discipline.</p></div><div class="list-item"><div class="number">F</div><h3>Financial Reporting</h3><p>Reporting is aligned with statutory requirements and professional standards.</p></div></div></div></section>
+
+    <section id="cases" class="soft-section"><div class="container"><div class="section-head"><div class="section-label">Engagement Focus</div><div class="section-title"><h2>Typical client engagements.</h2><p>Examples of how Taxorithm Holdings supports businesses across advisory, audit, tax and technology domains.</p></div></div><div class="list-grid"><div class="list-item"><div class="number">A</div><h3>Tax Compliance & Recovery</h3><p>Supporting clients with compliance reviews, tax exposure analysis and corrective filings.</p></div><div class="list-item"><div class="number">B</div><h3>Internal Audit Setup</h3><p>Designing and implementing internal audit frameworks for growing businesses.</p></div><div class="list-item"><div class="number">C</div><h3>Fraud Investigation</h3><p>Conducting forensic reviews and investigations into suspected financial irregularities.</p></div><div class="list-item"><div class="number">D</div><h3>Business Structuring</h3><p>Advising on optimal business structures for tax efficiency and operational scalability.</p></div><div class="list-item"><div class="number">E</div><h3>Systems & Data Implementation</h3><p>Deploying financial systems and analytics tools for improved reporting and control.</p></div><div class="list-item"><div class="number">F</div><h3>Commercial Expansion</h3><p>Supporting entry into new markets, product lines and investment opportunities.</p></div></div></div></section>
+
+    <section class="cta-band"><div class="container cta-inner"><div><h2>Advisory support with clarity and discipline.</h2><p>Discuss tax, compliance, data, technology or business advisory needs with Taxorithm Holdings.</p></div><a href="#contact" class="btn btn-primary">Start an enquiry</a></div></section>
+
+    <section id="contact"><div class="container"><div class="section-head"><div class="section-label">Contact</div><div class="section-title"><h2>Zimbabwe contact.</h2><p>Send an enquiry for tax, advisory, data, IT, technology product or strategic business support.</p></div></div><form id="contactForm" name="taxorithm-enquiry" method="POST" data-netlify="true" netlify-honeypot="company"><input type="hidden" name="form-name" value="taxorithm-enquiry"><p style="display:none"><label>Do not fill this out: <input name="company"></label></p><div class="form-grid"><div><label for="clientName">Full Name</label><input type="text" id="clientName" name="Full Name" required></div><div><label for="clientEmail">Email Address</label><input type="email" id="clientEmail" name="Email Address" required></div></div><label for="clientService">Service Required</label><select id="clientService" name="Service Required"><option>Tax Advisory and Compliance</option><option>Financial Consulting and Strategic Advisory</option><option>Internal Audit and Controls</option><option>Forensic Audit and Investigations</option><option>Risk Management and Compliance</option><option>IT Systems and Digital Solutions</option><option>Data Analytics and Data Science</option><option>Real Estate Development and Property Management</option><option>Technology Products, Gadgets and After-Sales Support</option><option>Strategic Partnerships or Joint Ventures</option></select><label for="clientMessage">Message</label><textarea id="clientMessage" name="Message" rows="5" placeholder="Briefly describe how Taxorithm Holdings can assist you."></textarea><button class="btn full-btn" type="submit">Send enquiry</button></form></div></section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><a href="#home" class="brand" style="margin-bottom: 20px; display: inline-flex;" aria-label="Taxorithm Holdings Home"><div class="brand-logo" aria-hidden="true"><img src="assets/taxorithm-logo.svg" alt=""></div><div><div class="brand-name" style="color: white;">Taxorithm Holdings</div><div class="brand-subtitle">Integrated Advisory & Technology</div></div></a><p>Integrated tax, consulting, IT, data analytics, real estate and technology solutions for modern enterprises.</p></div>
+      <div><h4>Quick Links</h4><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#framework">Zimbabwe Framework</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>Marondera, Zimbabwe</li><li>lloyd.shumba@excelbusinesschool.uk</li><li>0652322495</li></ul></div>
+    </div>
+    <div class="container" style="font-size:12px;color:#94a3b8;margin-bottom:16px;line-height:1.6;"><p>Disclaimer: The information on this website is provided for general informational purposes only and does not constitute professional advice. Engagement terms, scope and responsibilities are defined in formal agreements. Tax and legal outcomes depend on specific facts and applicable laws in Zimbabwe.</p></div>
+    <div class="container copyright"><span>© 2026 Taxorithm Holdings. All Rights Reserved.</span><span>Zimbabwe · Advisory · Tax · Audit · Forensics · Technology</span></div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var menuBtn = document.getElementById("menuBtn");
+      var closeBtn = document.getElementById("closeBtn");
+      var mobileMenu = document.getElementById("mobileMenu");
+      var mobileLinks = document.querySelectorAll(".mobile-links a");
+      function openMenu() { if (!mobileMenu) return; mobileMenu.classList.add("active"); mobileMenu.setAttribute("aria-hidden", "false"); }
+      function closeMenu() { if (!mobileMenu) return; mobileMenu.classList.remove("active"); mobileMenu.setAttribute("aria-hidden", "true"); }
+      if (menuBtn) menuBtn.addEventListener("click", openMenu);
+      if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+      for (var i = 0; i < mobileLinks.length; i += 1) { mobileLinks[i].addEventListener("click", closeMenu); }
+      console.assert(document.querySelectorAll("nav.navbar").length === 1, "Expected exactly one navigation bar.");
+      console.assert(document.querySelectorAll("#contactForm").length === 1, "Expected exactly one contact form.");
+      console.assert(document.querySelectorAll("#mobileMenu").length === 1, "Expected exactly one mobile menu.");
+      console.assert(document.querySelectorAll("section").length >= 5, "Expected at least five main content sections.");
+      console.assert(document.querySelectorAll('meta[property="og:title"]').length === 1, "Expected Open Graph title metadata.");
+      console.assert(document.querySelectorAll('form[data-netlify="true"]').length === 1, "Expected one deployment-ready Netlify form.");
+    });
+  </script>
+</body>
+</html>
