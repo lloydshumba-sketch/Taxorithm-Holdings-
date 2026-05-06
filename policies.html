@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Taxorithm Holdings privacy notice, professional code of ethics, payment request procedures and client protection policies." />
+  <meta name="theme-color" content="#eaf6ff" />
+  <meta property="og:title" content="Taxorithm Holdings | Privacy, Ethics & Payments" />
+  <meta property="og:description" content="Privacy policy, code of ethics and payment request guidance for Taxorithm Holdings clients." />
+  <meta property="og:type" content="website" />
+  <title>Privacy, Ethics & Payments | Taxorithm Holdings</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy: #08243f;
+      --blue: #0969da;
+      --sky: #eaf6ff;
+      --sky-2: #f5fbff;
+      --aqua: #38bdf8;
+      --gold: #c9a227;
+      --ink: #172033;
+      --muted: #64748b;
+      --line: #cfe5f7;
+      --white: #ffffff;
+      --danger: #b42318;
+      --success: #027a48;
+      --shadow: 0 24px 70px rgba(8, 36, 63, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56,189,248,0.22), transparent 34%),
+        linear-gradient(180deg, var(--sky) 0%, var(--white) 45%, var(--sky-2) 100%);
+      color: var(--ink);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, 92%); margin: 0 auto; }
+
+    .topbar {
+      background: var(--navy);
+      color: #dbeafe;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .topbar-inner {
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .topbar strong { color: var(--gold); }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(207,229,247,0.9);
+    }
+
+    .nav-inner {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 285px;
+    }
+
+    .brand-mark {
+      width: 62px;
+      height: 62px;
+      border-radius: 20px;
+      background: linear-gradient(145deg, var(--navy), #0f4c81 55%, var(--blue));
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 30px rgba(8,36,63,0.24);
+      border: 1px solid rgba(255,255,255,0.65);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .brand-mark::before {
+      content: "";
+      position: absolute;
+      width: 96px;
+      height: 96px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 50%;
+      transform: translate(18px, -18px);
+    }
+
+    .brand-mark span {
+      color: #fff;
+      font-weight: 900;
+      font-size: 21px;
+      letter-spacing: -0.08em;
+      position: relative;
+    }
+
+    .brand-name {
+      color: var(--navy);
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-subtitle {
+      margin-top: 7px;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 22px;
+      font-size: 14px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      padding: 31px 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+      border-bottom-color: var(--gold);
+    }
+
+    .nav-cta {
+      color: #fff;
+      background: var(--navy);
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 14px 30px rgba(8,36,63,0.16);
+      white-space: nowrap;
+    }
+
+    .hero {
+      padding: 86px 0 52px;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      box-shadow: var(--shadow);
+      padding: clamp(32px, 6vw, 72px);
+      display: grid;
+      grid-template-columns: 1.1fr 0.7fr;
+      gap: 50px;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: -120px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: rgba(56,189,248,0.16);
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      color: var(--navy);
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      font-weight: 900;
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 790px;
+    }
+
+    .hero-panel {
+      background: linear-gradient(145deg, var(--navy), #0f4c81);
+      color: #fff;
+      border-radius: 28px;
+      padding: 34px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 22px 50px rgba(8,36,63,0.25);
+    }
+
+    .hero-panel h2 {
+      font-size: 26px;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      margin-bottom: 16px;
+    }
+
+    .hero-panel p {
+      color: #dbeafe;
+      font-size: 15px;
+      margin-bottom: 22px;
+    }
+
+    .pill-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .pill {
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.09);
+      padding: 12px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: #f8fafc;
+    }
+
+    .page-nav {
+      padding: 0 0 36px;
+    }
+
+    .page-nav-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .page-nav a {
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--navy);
+      border-radius: 999px;
+      padding: 11px 16px;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(8,36,63,0.05);
+    }
+
+    .page-nav a:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    section {
+      padding: 74px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.34fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 36px;
+    }
+
+    .section-label {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 12px;
+      font-weight: 900;
+      padding-top: 8px;
+    }
+
+    .section-title h2 {
+      color: var(--navy);
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 840px;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: 0 18px 44px rgba(8,36,63,0.08);
+      overflow: hidden;
+    }
+
+    .policy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .policy-card {
+      padding: 32px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      min-height: 236px;
+      background: rgba(255,255,255,0.64);
+    }
+
+    .policy-card:nth-child(even) { border-right: 0; }
+    .policy-card h3 {
+      color: var(--navy);
+      font-size: 21px;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .policy-card p, .policy-card li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    ul.clean {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    ul.clean li {
+      padding-left: 20px;
+      position: relative;
+    }
+
+    ul.clean li::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+      position: absolute;
+      left: 0;
+      top: 0.68em;
+    }
+
+    .ethics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+      background: #fff;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 18px 44px rgba(8,36,63,0.08);
+    }
+
+    .ethics-item {
+      padding: 30px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      min-height: 220px;
+    }
+
+    .ethics-item .num {
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      margin-bottom: 12px;
+    }
+
+    .ethics-item h3 {
+      color: var(--navy);
+      font-size: 20px;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .ethics-item p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .payment-wrap {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .payment-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: 0 18px 44px rgba(8,36,63,0.08);
+    }
+
+    .payment-card h3 {
+      color: var(--navy);
+      font-size: 26px;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    .payment-card p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .notice {
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #7c2d12;
+      font-size: 14px;
+      margin-top: 18px;
+    }
+
+    .secure {
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: #ecfdf3;
+      border: 1px solid #abefc6;
+      color: var(--success);
+      font-size: 14px;
+      margin-top: 18px;
+    }
+
+    .danger {
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: #fef3f2;
+      border: 1px solid #fecdca;
+      color: var(--danger);
+      font-size: 14px;
+      margin-top: 18px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 900;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue);
+    }
+
+    .btn-outline {
+      border-color: var(--line);
+      background: #fff;
+      color: var(--navy);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: #fff;
+      margin-top: 18px;
+    }
+
+    .table th, .table td {
+      text-align: left;
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    .table th {
+      color: var(--navy);
+      background: var(--sky);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .table td {
+      color: var(--muted);
+    }
+
+    .table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .contact-strip {
+      background: linear-gradient(145deg, var(--navy), #0f4c81);
+      color: #fff;
+      border-radius: 32px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      box-shadow: 0 22px 52px rgba(8,36,63,0.22);
+    }
+
+    .contact-strip h2 {
+      font-size: 34px;
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      margin-bottom: 12px;
+    }
+
+    .contact-strip p, .contact-strip li {
+      color: #dbeafe;
+      font-size: 15px;
+    }
+
+    .contact-strip ul {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+
+    .footer {
+      background: #031529;
+      color: #cbd5e1;
+      padding: 54px 0 28px;
+      margin-top: 72px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 42px;
+      margin-bottom: 38px;
+    }
+
+    .footer h4 {
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    .footer ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 22px;
+      color: #94a3b8;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links, .nav-cta { display: none; }
+      .hero-card,
+      .section-head,
+      .payment-wrap,
+      .contact-strip,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .policy-grid,
+      .ethics-grid {
+        grid-template-columns: 1fr;
+      }
+      .policy-card { border-right: 0; }
+    }
+
+    @media (max-width: 680px) {
+      .topbar-inner,
+      .copyright {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+      }
+      .brand { min-width: auto; }
+      .brand-mark { width: 52px; height: 52px; border-radius: 17px; }
+      .brand-name { font-size: 17px; }
+      .hero { padding: 44px 0 28px; }
+      .hero-card { border-radius: 26px; padding: 28px; }
+      h1 { font-size: 40px; }
+      section { padding: 54px 0; }
+      .policy-card, .ethics-item, .payment-card { padding: 24px; }
+      .table th, .table td { display: block; width: 100%; }
+      .table th { border-bottom: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div><strong>Taxorithm Holdings</strong> · Privacy, ethics, billing and client protection</div>
+      <div><a href="mailto:info@taxorithm.us">info@taxorithm.us</a></div>
+    </div>
+  </div>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Taxorithm Holdings Home">
+        <div class="brand-mark" aria-hidden="true"><span>TX</span></div>
+        <div>
+          <div class="brand-name">Taxorithm Holdings</div>
+          <div class="brand-subtitle">Integrated Advisory & Technology</div>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#ethics">Ethics</a>
+        <a href="#payments">Payments</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a class="nav-cta" href="mailto:accounts@taxorithm.us?subject=Payment%20Request%20-%20Taxorithm%20Holdings">Request payment support</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-card">
+      <div>
+        <div class="eyebrow">Governance · Trust · Professional Conduct</div>
+        <h1>Privacy, Ethics & Payment Requests</h1>
+        <p>
+          This page sets out the client protection standards applied by Taxorithm Holdings in relation to personal information,
+          professional conduct, confidential engagements, payment requests, invoice verification and billing communication.
+        </p>
+      </div>
+
+      <aside class="hero-panel">
+        <h2>Client protection commitment</h2>
+        <p>
+          Taxorithm Holdings handles tax, advisory, audit, forensic, technology and commercial engagements with confidentiality,
+          professional discipline and secure communication practices.
+        </p>
+        <div class="pill-list">
+          <div class="pill">Official email: info@taxorithm.us</div>
+          <div class="pill">Accounts: accounts@taxorithm.us</div>
+          <div class="pill">Support: support@taxorithm.us</div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <div class="page-nav">
+    <div class="container page-nav-inner">
+      <a href="#privacy">Privacy Notice</a>
+      <a href="#ethics">Code of Ethics</a>
+      <a href="#payments">Payment Requests</a>
+      <a href="#anti-fraud">Anti-Fraud Notice</a>
+      <a href="#contact">Official Contacts</a>
+    </div>
+  </div>
+
+  <main>
+    <section id="privacy">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">Privacy Notice</div>
+          <div class="section-title">
+            <h2>How we collect, use and protect client information.</h2>
+            <p>
+              Taxorithm Holdings may process client information for professional engagement purposes, regulatory compliance,
+              communication, billing, advisory delivery, audit support, forensic review, tax assistance and technology-related services.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel policy-grid">
+          <div class="policy-card">
+            <h3>1. Information we may collect</h3>
+            <p>Depending on the nature of the engagement, we may collect:</p>
+            <ul class="clean">
+              <li>Client names, contact details, addresses and business registration information.</li>
+              <li>Tax, accounting, payroll, financial, corporate, audit and compliance records.</li>
+              <li>Identity verification documents where required for compliance or engagement acceptance.</li>
+              <li>Technical information submitted through website forms, email, telephone, WhatsApp or consultation channels.</li>
+            </ul>
+          </div>
+
+          <div class="policy-card">
+            <h3>2. Purpose of processing</h3>
+            <p>Client data is processed for legitimate and professional purposes, including:</p>
+            <ul class="clean">
+              <li>Responding to enquiries and preparing engagement proposals.</li>
+              <li>Delivering tax, advisory, audit, forensic, accounting, data and technology services.</li>
+              <li>Preparing invoices, maintaining client records and managing payments.</li>
+              <li>Meeting legal, regulatory, ethical, risk management and professional obligations.</li>
+            </ul>
+          </div>
+
+          <div class="policy-card">
+            <h3>3. Confidentiality and access control</h3>
+            <p>
+              Client information is treated as confidential. Access is limited to authorised persons who require the information
+              for service delivery, quality control, billing, risk management or legal compliance.
+            </p>
+          </div>
+
+          <div class="policy-card">
+            <h3>4. Disclosure of information</h3>
+            <p>We do not sell client information. Information may only be disclosed where:</p>
+            <ul class="clean">
+              <li>The client has authorised the disclosure.</li>
+              <li>Disclosure is required by law, regulation, court order or competent authority.</li>
+              <li>Disclosure is necessary to professional advisers, service providers or systems used for secure service delivery.</li>
+              <li>Disclosure is required to protect rights, prevent fraud or respond to suspected unlawful conduct.</li>
+            </ul>
+          </div>
+
+          <div class="policy-card">
+            <h3>5. Data security</h3>
+            <p>
+              Reasonable administrative, technical and organisational safeguards are applied to protect personal information against
+              unauthorised access, misuse, loss, alteration or disclosure. No online transmission method is completely risk-free,
+              and clients should avoid sending highly sensitive documents through unsecured channels.
+            </p>
+          </div>
+
+          <div class="policy-card">
+            <h3>6. Retention of information</h3>
+            <p>
+              Records are retained for as long as necessary for engagement delivery, tax, accounting, audit, legal, regulatory,
+              dispute resolution, professional liability and business administration purposes. When information is no longer required,
+              it may be securely deleted, archived or anonymised.
+            </p>
+          </div>
+
+          <div class="policy-card">
+            <h3>7. Client rights and corrections</h3>
+            <p>
+              Clients may request access to their information, correction of inaccurate information, withdrawal from non-essential
+              communications or clarification on how their information is used, subject to legal, professional and contractual limits.
+            </p>
+          </div>
+
+          <div class="policy-card">
+            <h3>8. Website forms and email communication</h3>
+            <p>
+              Information submitted through website forms is used to respond to enquiries and manage client communication.
+              Clients should not submit passwords, card numbers, banking PINs or highly sensitive documents through public website forms.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="ethics">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">Code of Ethics</div>
+          <div class="section-title">
+            <h2>Professional standards that guide our work.</h2>
+            <p>
+              Taxorithm Holdings applies a professional code of conduct designed to protect clients, preserve trust and support
+              ethical judgement across tax, advisory, accounting, internal audit, forensic and technology engagements.
+            </p>
+          </div>
+        </div>
+
+        <div class="ethics-grid">
+          <div class="ethics-item">
+            <div class="num">01</div>
+            <h3>Integrity</h3>
+            <p>We act honestly, fairly and transparently, and we do not knowingly participate in misleading, fraudulent or unlawful arrangements.</p>
+          </div>
+
+          <div class="ethics-item">
+            <div class="num">02</div>
+            <h3>Objectivity</h3>
+            <p>We exercise professional judgement without bias, undue influence, intimidation, conflicts of interest or improper pressure from any party.</p>
+          </div>
+
+          <div class="ethics-item">
+            <div class="num">03</div>
+            <h3>Professional competence</h3>
+            <p>We accept engagements only where we can apply the required competence, supervision, care and technical discipline.</p>
+          </div>
+
+          <div class="ethics-item">
+            <div class="num">04</div>
+            <h3>Confidentiality</h3>
+            <p>We protect sensitive client information and use it only for authorised professional, legal, regulatory or engagement-related purposes.</p>
+          </div>
+
+          <div class="ethics-item">
+            <div class="num">05</div>
+            <h3>Professional behaviour</h3>
+            <p>We comply with applicable laws and avoid conduct that may discredit the firm, the client, professional bodies or the public interest.</p>
+          </div>
+
+          <div class="ethics-item">
+            <div class="num">06</div>
+            <h3>Independence and conflicts</h3>
+            <p>Where independence or objectivity may be affected, we identify threats, evaluate safeguards and decline or withdraw where appropriate.</p>
+          </div>
+
+          <div class="ethics-item">
+            <div class="num">07</div>
+            <h3>Anti-bribery and anti-corruption</h3>
+            <p>We do not offer, request, receive or facilitate bribes, kickbacks, secret commissions or improper advantages.</p>
+          </div>
+
+          <div class="ethics-item">
+            <div class="num">08</div>
+            <h3>Responsible tax conduct</h3>
+            <p>We support lawful tax planning and compliance, but we do not assist with tax evasion, false declarations or deliberate concealment.</p>
+          </div>
+
+          <div class="ethics-item">
+            <div class="num">09</div>
+            <h3>Forensic integrity</h3>
+            <p>Forensic work is performed with evidence discipline, confidentiality, procedural fairness and clear reporting of findings and limitations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="payments">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">Payment Requests</div>
+          <div class="section-title">
+            <h2>Invoice verification and payment request procedures.</h2>
+            <p>
+              This section explains how clients should request invoices, confirm payment instructions, submit proof of payment and avoid payment fraud.
+            </p>
+          </div>
+        </div>
+
+        <div class="payment-wrap">
+          <div class="payment-card">
+            <h3>Requesting an invoice or quotation</h3>
+            <p>
+              Clients may request a quotation, pro forma invoice or formal invoice before payment. The request should clearly state the service required,
+              client name, company name, contact details, billing details and any supporting documentation.
+            </p>
+
+            <table class="table" aria-label="Payment request routing">
+              <tr>
+                <th>Request type</th>
+                <th>Official email address</th>
+              </tr>
+              <tr>
+                <td>Invoices, statements and payment confirmations</td>
+                <td><a href="mailto:accounts@taxorithm.us">accounts@taxorithm.us</a></td>
+              </tr>
+              <tr>
+                <td>Tax advisory and compliance billing</td>
+                <td><a href="mailto:tax@taxorithm.us">tax@taxorithm.us</a></td>
+              </tr>
+              <tr>
+                <td>Company registration and corporate setup billing</td>
+                <td><a href="mailto:registrations@taxorithm.us">registrations@taxorithm.us</a></td>
+              </tr>
+              <tr>
+                <td>Forensic review and investigation billing</td>
+                <td><a href="mailto:forensics@taxorithm.us">forensics@taxorithm.us</a></td>
+              </tr>
+              <tr>
+                <td>General enquiries and client support</td>
+                <td><a href="mailto:info@taxorithm.us">info@taxorithm.us</a> / <a href="mailto:support@taxorithm.us">support@taxorithm.us</a></td>
+              </tr>
+            </table>
+
+            <div class="btn-row">
+              <a class="btn btn-primary" href="mailto:accounts@taxorithm.us?subject=Invoice%20Request%20-%20Taxorithm%20Holdings&body=Good%20day%20Taxorithm%20Holdings%2C%0A%0AI%20would%20like%20to%20request%20an%20invoice%2Fquotation.%0A%0AClient%20name%3A%0ACompany%20name%3A%0AService%20required%3A%0ABilling%20details%3A%0AAdditional%20information%3A%0A%0ARegards%2C">Request invoice</a>
+              <a class="btn btn-outline" href="mailto:accounts@taxorithm.us?subject=Proof%20of%20Payment%20-%20Taxorithm%20Holdings&body=Good%20day%20Taxorithm%20Holdings%2C%0A%0APlease%20find%20my%20proof%20of%20payment%20attached.%0A%0AClient%20name%3A%0AInvoice%20number%3A%0AAmount%20paid%3A%0ADate%20paid%3A%0APayment%20reference%3A%0A%0ARegards%2C">Submit proof of payment</a>
+            </div>
+          </div>
+
+          <aside class="payment-card" id="anti-fraud">
+            <h3>Payment safety notice</h3>
+            <p>
+              To protect clients against fraud, payments should only be made after receiving official written payment instructions
+              from an authorised Taxorithm Holdings email address.
+            </p>
+
+            <div class="secure">
+              Taxorithm Holdings will not ask clients to provide card PINs, online banking passwords, one-time passwords, full card details or mobile money PINs.
+            </div>
+
+            <div class="danger">
+              If you receive changed banking details, urgent payment pressure or suspicious payment instructions, verify directly through accounts@taxorithm.us before paying.
+            </div>
+
+            <div class="notice">
+              Bank account details, mobile money details and payment platforms should be inserted only after management approves the final billing procedure.
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="terms">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">Billing Terms</div>
+          <div class="section-title">
+            <h2>Professional payment terms for client engagements.</h2>
+            <p>
+              These terms are suitable for a professional advisory firm and can be refined per engagement letter, quotation or invoice.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel policy-grid">
+          <div class="policy-card">
+            <h3>Engagement approval</h3>
+            <p>
+              Services commence after engagement scope, responsibilities, fees, timelines and payment terms are agreed in writing.
+              For certain engagements, a deposit or retainer may be required before work begins.
+            </p>
+          </div>
+
+          <div class="policy-card">
+            <h3>Invoice due dates</h3>
+            <p>
+              Invoice due dates are stated on the invoice, quotation or engagement letter. Where no date is specified, payment is expected
+              within a reasonable period after invoice issue.
+            </p>
+          </div>
+
+          <div class="policy-card">
+            <h3>Scope changes</h3>
+            <p>
+              Additional work outside the agreed scope may require a revised quotation, supplementary invoice or written approval before further work proceeds.
+            </p>
+          </div>
+
+          <div class="policy-card">
+            <h3>Taxes and statutory charges</h3>
+            <p>
+              Fees may be subject to applicable taxes, duties, bank charges, transaction charges or statutory fees depending on the service and payment method.
+            </p>
+          </div>
+
+          <div class="policy-card">
+            <h3>Refunds and cancellations</h3>
+            <p>
+              Refunds are assessed according to the nature of the service, work already performed, third-party costs incurred and the terms of the engagement.
+            </p>
+          </div>
+
+          <div class="policy-card">
+            <h3>Disputed invoices</h3>
+            <p>
+              Invoice queries should be raised promptly through accounts@taxorithm.us, stating the invoice number, amount, reason for dispute and supporting details.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-strip">
+        <div>
+          <h2>Official communication channels</h2>
+          <p>
+            Use official Taxorithm Holdings email addresses for all professional enquiries, billing communication, payment confirmations and support requests.
+          </p>
+        </div>
+        <div>
+          <ul>
+            <li><strong>General:</strong> <a href="mailto:info@taxorithm.us">info@taxorithm.us</a></li>
+            <li><strong>Accounts:</strong> <a href="mailto:accounts@taxorithm.us">accounts@taxorithm.us</a></li>
+            <li><strong>Tax:</strong> <a href="mailto:tax@taxorithm.us">tax@taxorithm.us</a></li>
+            <li><strong>Registrations:</strong> <a href="mailto:registrations@taxorithm.us">registrations@taxorithm.us</a></li>
+            <li><strong>Forensics:</strong> <a href="mailto:forensics@taxorithm.us">forensics@taxorithm.us</a></li>
+            <li><strong>Support:</strong> <a href="mailto:support@taxorithm.us">support@taxorithm.us</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom: 20px; display: inline-flex;" aria-label="Taxorithm Holdings Home">
+          <div class="brand-mark" aria-hidden="true"><span>TX</span></div>
+          <div>
+            <div class="brand-name" style="color: white;">Taxorithm Holdings</div>
+            <div class="brand-subtitle">Integrated Advisory & Technology</div>
+          </div>
+        </a>
+        <p>Integrated tax, advisory, audit, forensic, accounting, data, technology and commercial solutions.</p>
+      </div>
+
+      <div>
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="#privacy">Privacy Notice</a></li>
+          <li><a href="#ethics">Code of Ethics</a></li>
+          <li><a href="#payments">Payment Requests</a></li>
+          <li><a href="#anti-fraud">Anti-Fraud Notice</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@taxorithm.us">info@taxorithm.us</a></li>
+          <li><a href="mailto:accounts@taxorithm.us">accounts@taxorithm.us</a></li>
+          <li><a href="mailto:support@taxorithm.us">support@taxorithm.us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container" style="font-size:12px;color:#94a3b8;margin-bottom:16px;line-height:1.6;">
+      <p>
+        Disclaimer: This page is provided for general governance, client communication and professional conduct purposes. It does not constitute legal advice.
+        Final legal terms should be reviewed by a qualified legal practitioner and aligned to the final engagement letter, invoice format and payment procedures of Taxorithm Holdings.
+      </p>
+    </div>
+
+    <div class="container copyright">
+      <span>© 2026 Taxorithm Holdings. All Rights Reserved.</span>
+      <span>Privacy · Ethics · Payments · Client Protection</span>
+    </div>
+  </footer>
+</body>
+</html>
