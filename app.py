@@ -1,52 +1,93 @@
+import os
+import smtplib
+from email.message import EmailMessage
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
+MAIL_TO = os.environ.get("MAIL_TO", "info@taxorithm.us")
+MAIL_FROM = os.environ.get("MAIL_FROM")
+SMTP_HOST = os.environ.get("SMTP_HOST")
+SMTP_PORT = int(os.environ.get("SMTP_PORT", "587"))
+SMTP_USER = os.environ.get("SMTP_USER")
+SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD")
+
+
+@app.route("/")
+def home():
+    return jsonify({
+        "status": "online",
+        "message": "Taxorithm Holdings backend is running successfully."
+    })
+
+
+@app.route("/api/health")
+def health():
+    return jsonify({
+        "status": "healthy"
+    })
+
+
+@app.route("/api/contact", methods=["POST"])
+def contact():
+    data = request.get_json() or {}
+
+    name = data.get("name", "").strip()
+    email = data.get("email", "").strip()
+    phone = data.get("phone", "").strip()
+    service = data.get("service", "General enquiry").strip()
+    message = data.get("message", "").strip()
+
+    if not name or not email or not message:
+        return jsonify({
+            "success": False,
+            "message": "Name, email and message are required."
+        }), 400
+
+    if not SMTP_HOST or not SMTP_USER or not SMTP_PASSWORD or not MAIL_FROM:
+        return jsonify({
+            "success": False,
+            "message": "Email service is not configured on the server."
+        }), 500
+
+    email_subject = f"New Taxorithm Holdings enquiry - {service}"
+
+    email_body = f"""
+New enquiry received from the Taxorithm Holdings website.
+
+Name: {name}
+Email: {email}
+Phone: {phone}
+Service: {service}
+
+Message:
+{message}
 """
-Taxorithm Advisory API starter.
 
-This module is a placeholder for future advanced data processing, audit analytics
-and professional services tooling. It is not executed by GitHub Pages.
-"""
+    msg = EmailMessage()
+    msg["Subject"] = email_subject
+    msg["From"] = MAIL_FROM
+    msg["To"] = MAIL_TO
+    msg["Reply-To"] = email
+    msg.set_content(email_body)
 
-from __future__ import annotations
+    try:
+        with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
+            server.starttls()
+            server.login(SMTP_USER, SMTP_PASSWORD)
+            server.send_message(msg)
 
-from dataclasses import dataclass, asdict
-from http.server import BaseHTTPRequestHandler
-import json
-from typing import Iterable
+        return jsonify({
+            "success": True,
+            "message": "Enquiry sent successfully."
+        })
 
+    except Exception as error:
+        print("Email sending error:", error)
 
-@dataclass
-class HealthStatus:
-    status: str = "ok"
-    service: str = "taxorithm-advisory-api"
-    purpose: str = "advanced data processing and audit tools"
-
-
-def health() -> dict:
-    """Return a basic service health payload."""
-    return asdict(HealthStatus())
-
-
-def audit_record_summary(records: Iterable[dict] | None = None) -> dict:
-    """Return a simple placeholder summary for future audit analytics."""
-    rows = list(records or [])
-    return {
-        "records_received": len(rows),
-        "checks_available": [
-            "duplicate_reference_detection",
-            "unusual_value_scan",
-            "missing_field_review",
-            "period_cutoff_review",
-        ],
-        "message": "Placeholder only. Connect this to a backend before production use.",
-    }
-
-
-class handler(BaseHTTPRequestHandler):
-    """Simple JSON health endpoint for compatible serverless environments."""
-
-    def do_GET(self) -> None:
-        body = json.dumps(health()).encode("utf-8")
-        self.send_response(200)
-        self.send_header("Content-Type", "application/json")
-        self.send_header("Content-Length", str(len(body)))
-        self.end_headers()
-        self.wfile.write(body)
+        return jsonify({
+            "success": False,
+            "message": "The enquiry was received, but the email could not be sent."
+        }), 500
