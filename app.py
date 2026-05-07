@@ -7,7 +7,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-MAIL_TO = os.environ.get("MAIL_TO", "info@taxorithm.us")
+MAIL_TO = os.environ.get("MAIL_TO", "registrations@taxorithm.us")
 MAIL_FROM = os.environ.get("MAIL_FROM")
 SMTP_HOST = os.environ.get("SMTP_HOST")
 SMTP_PORT = int(os.environ.get("SMTP_PORT", "587"))
