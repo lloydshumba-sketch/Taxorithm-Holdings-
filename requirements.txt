@@ -1,0 +1,6 @@
+# Add Python dependencies here when backend deployment begins.
+# Example:
+# pandas
+# numpy
+# fastapi
+# uvicorn

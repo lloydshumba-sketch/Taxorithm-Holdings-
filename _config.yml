@@ -1,0 +1,6 @@
+title: Taxorithm Advisory
+url: "https://taxorithm.us"
+timezone: Africa/Harare
+plugins: []
+include:
+  - _config.yml

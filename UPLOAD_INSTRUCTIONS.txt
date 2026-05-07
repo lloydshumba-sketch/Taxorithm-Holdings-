@@ -1,0 +1,51 @@
+TAXORITHM ADVISORY - FINAL POLISHED WEBSITE PACKAGE
+
+Upload all root files into your GitHub repository:
+
+_config.yml
+index.html
+about.html
+services.html
+tax.html
+registration.html
+contact.html
+policies.html
+style.css
+script.js
+
+Upload the api folder as well:
+
+api/README.md
+api/app.py
+api/requirements.txt
+
+Keep this file if it already exists:
+
+CNAME
+
+Delete older duplicate or outdated files if they remain:
+
+about/index.html
+services/index.html
+tax/index.html
+registration/index.html
+contact/index.html
+policies/index.html
+old assets folder
+netlify.toml
+_headers
+README.md
+
+If a file named .nojekyll exists, delete it because the clean URLs use Jekyll front matter.
+
+Your public URLs will be:
+
+https://taxorithm.us/
+https://taxorithm.us/about/
+https://taxorithm.us/services/
+https://taxorithm.us/tax/
+https://taxorithm.us/registration/
+https://taxorithm.us/contact/
+https://taxorithm.us/policies/
+
+GitHub Pages does not run Python. The api folder is included as a future backend/audit-tools structure only.
