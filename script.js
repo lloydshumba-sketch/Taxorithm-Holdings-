@@ -1,26 +1,7 @@
 const API_BASE_URL = "https://taxorithm-backend.onrender.com";
 
 document.addEventListener("DOMContentLoaded", function () {
-  var menuBtn = document.getElementById("menuBtn");
-  var closeBtn = document.getElementById("closeBtn");
-  var mobileMenu = document.getElementById("mobileMenu");
-  var mobileLinks = document.querySelectorAll(".mobile-links a");
-
-  function openMenu() {
-    if (!mobileMenu) return;
-    mobileMenu.classList.add("active");
-    mobileMenu.setAttribute("aria-hidden", "false");
-  }
-
-  function closeMenu() {
-    if (!mobileMenu) return;
-    mobileMenu.classList.remove("active");
-    mobileMenu.setAttribute("aria-hidden", "true");
-  }
-
-  if (menuBtn) menuBtn.addEventListener("click", openMenu);
-  if (closeBtn) closeBtn.addEventListener("click", closeMenu);
-  mobileLinks.forEach(function (link) { link.addEventListener("click", closeMenu); });
+  // your menu code
 
   var serviceEmails = {
     registrations: "registrations@taxorithm.us",
@@ -37,3 +18,44 @@ document.addEventListener("DOMContentLoaded", function () {
     partner: "lloyd.shumba@taxorithm.us",
     general: "info@taxorithm.us"
   };
+
+  var contactForm = document.querySelector("form");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var formData = new FormData(contactForm);
+
+      var selectedService = formData.get("service") || "general";
+
+      var payload = {
+        name: formData.get("name") || "",
+        email: formData.get("email") || "",
+        phone: formData.get("phone") || "",
+        service: selectedService,
+        serviceEmail: serviceEmails[selectedService] || serviceEmails.general,
+        message: formData.get("message") || ""
+      };
+
+      fetch(API_BASE_URL + "/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        alert("Thank you. Your enquiry has been received successfully.");
+        contactForm.reset();
+      })
+      .catch(function (error) {
+        console.error("Contact form error:", error);
+        alert("Sorry, there was a problem submitting your enquiry. Please try again.");
+      });
+    });
+  }
+});
