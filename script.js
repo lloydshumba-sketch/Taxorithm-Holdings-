@@ -1,3 +1,5 @@
+const API_BASE_URL = "https://taxorithm-backend.onrender.com";
+
 document.addEventListener("DOMContentLoaded", function () {
   var menuBtn = document.getElementById("menuBtn");
   var closeBtn = document.getElementById("closeBtn");
@@ -35,48 +37,3 @@ document.addEventListener("DOMContentLoaded", function () {
     partner: "lloyd.shumba@taxorithm.us",
     general: "info@taxorithm.us"
   };
-
-  var form = document.getElementById("contactForm");
-  var serviceSelect = document.getElementById("clientService");
-  var targetEmail = document.getElementById("targetEmail");
-
-  function updateTargetEmail() {
-    if (!serviceSelect || !targetEmail) return;
-    targetEmail.textContent = serviceEmails[serviceSelect.value] || "info@taxorithm.us";
-  }
-
-  if (serviceSelect) serviceSelect.addEventListener("change", updateTargetEmail);
-  updateTargetEmail();
-
-  if (form) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      var name = document.getElementById("clientName").value.trim();
-      var email = document.getElementById("clientEmail").value.trim();
-      var phone = document.getElementById("clientPhone").value.trim();
-      var organisation = document.getElementById("clientOrganisation").value.trim();
-      var message = document.getElementById("clientMessage").value.trim();
-      var serviceText = serviceSelect.options[serviceSelect.selectedIndex].text;
-      var destination = serviceEmails[serviceSelect.value] || "info@taxorithm.us";
-
-      var subject = "Taxorithm Advisory enquiry - " + serviceText;
-      var body = [
-        "Full Name: " + name,
-        "Email Address: " + email,
-        "Phone / WhatsApp: " + phone,
-        "Organisation: " + organisation,
-        "Service Required: " + serviceText,
-        "",
-        "Message:",
-        message
-      ].join("\n");
-
-      var mailto = "mailto:" + encodeURIComponent(destination)
-        + "?subject=" + encodeURIComponent(subject)
-        + "&body=" + encodeURIComponent(body);
-
-      window.location.href = mailto;
-    });
-  }
-});
