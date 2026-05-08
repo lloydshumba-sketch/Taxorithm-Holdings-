@@ -61,7 +61,7 @@
       height: 58px;
     }
 
-    .ta-adverts-section {
+    .ta-notices-section {
       position: relative;
       overflow: hidden;
       background:
@@ -72,7 +72,7 @@
       border-bottom: 1px solid rgba(6, 43, 79, 0.08);
     }
 
-    .ta-adverts-section::before {
+    .ta-notices-section::before {
       content: "";
       position: absolute;
       inset: 0;
@@ -81,12 +81,12 @@
       pointer-events: none;
     }
 
-    .ta-adverts-inner {
+    .ta-notices-inner {
       position: relative;
       z-index: 1;
     }
 
-    .ta-adverts-head {
+    .ta-notices-head {
       display: grid;
       grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1.05fr);
       gap: clamp(24px, 4vw, 56px);
@@ -94,7 +94,7 @@
       margin-bottom: clamp(28px, 4vw, 44px);
     }
 
-    .ta-adverts-label {
+    .ta-notices-label {
       display: inline-flex;
       align-items: center;
       gap: 10px;
@@ -110,7 +110,7 @@
       margin-bottom: 14px;
     }
 
-    .ta-adverts-label::before {
+    .ta-notices-label::before {
       content: "";
       width: 8px;
       height: 8px;
@@ -119,7 +119,7 @@
       box-shadow: 0 0 0 5px rgba(214, 166, 74, 0.18);
     }
 
-    .ta-adverts-head h2 {
+    .ta-notices-head h2 {
       margin: 0;
       color: #062b4f;
       font-size: clamp(2rem, 4vw, 3.35rem);
@@ -127,20 +127,20 @@
       letter-spacing: -0.055em;
     }
 
-    .ta-adverts-head p {
+    .ta-notices-head p {
       margin: 0;
       color: rgba(6, 43, 79, 0.76);
       font-size: clamp(1rem, 1.3vw, 1.12rem);
       line-height: 1.75;
     }
 
-    .ta-adverts-grid {
+    .ta-notices-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: clamp(18px, 2.4vw, 28px);
     }
 
-    .ta-advert-card {
+    .ta-notice-card {
       position: relative;
       overflow: hidden;
       background: #ffffff;
@@ -150,20 +150,20 @@
       transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
     }
 
-    .ta-advert-card:hover {
+    .ta-notice-card:hover {
       transform: translateY(-7px);
       box-shadow: 0 34px 90px rgba(6, 43, 79, 0.17);
       border-color: rgba(214, 166, 74, 0.45);
     }
 
-    .ta-advert-image-wrap {
+    .ta-notice-image-wrap {
       position: relative;
       overflow: hidden;
       background: #062b4f;
       aspect-ratio: 4 / 5;
     }
 
-    .ta-advert-image-wrap img {
+    .ta-notice-image-wrap img {
       width: 100%;
       height: 100%;
       display: block;
@@ -171,11 +171,11 @@
       transition: transform 0.35s ease;
     }
 
-    .ta-advert-card:hover img {
+    .ta-notice-card:hover img {
       transform: scale(1.035);
     }
 
-    .ta-advert-badge {
+    .ta-notice-badge {
       position: absolute;
       left: 16px;
       top: 16px;
@@ -194,11 +194,11 @@
       backdrop-filter: blur(10px);
     }
 
-    .ta-advert-body {
+    .ta-notice-body {
       padding: 22px 22px 24px;
     }
 
-    .ta-advert-body h3 {
+    .ta-notice-body h3 {
       margin: 0 0 9px;
       color: #062b4f;
       font-size: 1.05rem;
@@ -206,14 +206,14 @@
       letter-spacing: -0.02em;
     }
 
-    .ta-advert-body p {
+    .ta-notice-body p {
       margin: 0;
       color: rgba(6, 43, 79, 0.7);
       font-size: 0.93rem;
       line-height: 1.6;
     }
 
-    .ta-adverts-cta {
+    .ta-notices-cta {
       margin-top: clamp(24px, 4vw, 42px);
       display: flex;
       justify-content: space-between;
@@ -229,38 +229,38 @@
       border: 1px solid rgba(214, 166, 74, 0.32);
     }
 
-    .ta-adverts-cta h3 {
+    .ta-notices-cta h3 {
       margin: 0 0 8px;
       font-size: clamp(1.25rem, 2vw, 1.7rem);
       letter-spacing: -0.03em;
     }
 
-    .ta-adverts-cta p {
+    .ta-notices-cta p {
       margin: 0;
       max-width: 720px;
       color: rgba(255, 255, 255, 0.78);
       line-height: 1.65;
     }
 
-    .ta-adverts-cta .btn {
+    .ta-notices-cta .btn {
       white-space: nowrap;
     }
 
     @media (max-width: 960px) {
-      .ta-adverts-head {
+      .ta-notices-head {
         grid-template-columns: 1fr;
       }
 
-      .ta-adverts-grid {
+      .ta-notices-grid {
         grid-template-columns: 1fr;
       }
 
-      .ta-advert-card {
+      .ta-notice-card {
         max-width: 560px;
         margin: 0 auto;
       }
 
-      .ta-adverts-cta {
+      .ta-notices-cta {
         align-items: flex-start;
         flex-direction: column;
       }
@@ -283,19 +283,19 @@
         height: 50px;
       }
 
-      .ta-adverts-section {
+      .ta-notices-section {
         padding: 48px 0;
       }
 
-      .ta-advert-card {
+      .ta-notice-card {
         border-radius: 22px;
       }
 
-      .ta-advert-body {
+      .ta-notice-body {
         padding: 18px;
       }
 
-      .ta-adverts-cta {
+      .ta-notices-cta {
         border-radius: 22px;
       }
     }
@@ -457,52 +457,52 @@
       </div>
     </section>
 
-    <section class="ta-adverts-section" aria-label="Taxorithm Advisory promotional adverts">
-      <div class="container ta-adverts-inner">
-        <div class="ta-adverts-head">
+    <section class="ta-notices-section" aria-label="Taxorithm Advisory client service notices">
+      <div class="container ta-notices-inner">
+        <div class="ta-notices-head">
           <div>
-            <div class="ta-adverts-label">Featured business insights</div>
-            <h2>Professional adverts designed to communicate trust, compliance and growth.</h2>
+            <div class="ta-notices-label">Client service notices</div>
+            <h2>Important business messages for informed, compliant and confident decision-making.</h2>
           </div>
-          <p>Explore Taxorithm Advisory’s service messages for startups, SMEs and established businesses seeking tax compliance, accounting discipline, audit support, forensic insight, data analytics and digital execution.</p>
+          <p>Stay updated through concise professional notices from Taxorithm Advisory on tax compliance, accounting records, internal controls, forensic review, data insight and digital business support for startups, SMEs and established businesses.</p>
         </div>
 
-        <div class="ta-adverts-grid">
-          <article class="ta-advert-card">
-            <div class="ta-advert-image-wrap">
-              <span class="ta-advert-badge">Introduction</span>
-              <img src="assets/adverts/taxorithm-introduction-advert.png" alt="Taxorithm Advisory professional introduction advert showing services offered" loading="lazy" />
+        <div class="ta-notices-grid">
+          <article class="ta-notice-card">
+            <div class="ta-notice-image-wrap">
+              <span class="ta-notice-badge">Service overview</span>
+              <img src="assets/adverts/taxorithm-introduction-advert.png" alt="Taxorithm Advisory service overview showing professional solutions offered" loading="lazy" />
             </div>
-            <div class="ta-advert-body">
-              <h3>Professional service introduction</h3>
-              <p>A concise overview of the advisory, tax, accounting, audit, training, data and digital solutions offered by Taxorithm Advisory.</p>
-            </div>
-          </article>
-
-          <article class="ta-advert-card">
-            <div class="ta-advert-image-wrap">
-              <span class="ta-advert-badge">Did you know?</span>
-              <img src="assets/adverts/taxorithm-did-you-know-megaphone.png" alt="Taxorithm Advisory did you know advert about tax errors, weak records and compliance gaps" loading="lazy" />
-            </div>
-            <div class="ta-advert-body">
-              <h3>Compliance awareness</h3>
-              <p>A direct message highlighting how poor records, tax errors and compliance gaps can quietly weaken business performance.</p>
+            <div class="ta-notice-body">
+              <h3>Integrated professional support</h3>
+              <p>A clear service pathway covering tax, accounting, audit, training, data analytics, company registration and digital business infrastructure.</p>
             </div>
           </article>
 
-          <article class="ta-advert-card">
-            <div class="ta-advert-image-wrap">
-              <span class="ta-advert-badge">Client satisfaction</span>
-              <img src="assets/adverts/taxorithm-client-satisfaction-handshake.png" alt="Taxorithm Advisory client satisfaction advert showing male and female professionals shaking hands" loading="lazy" />
+          <article class="ta-notice-card">
+            <div class="ta-notice-image-wrap">
+              <span class="ta-notice-badge">Compliance alert</span>
+              <img src="assets/adverts/taxorithm-did-you-know-megaphone.png" alt="Taxorithm Advisory compliance notice about tax errors, weak records and compliance gaps" loading="lazy" />
             </div>
-            <div class="ta-advert-body">
-              <h3>Trusted business support</h3>
-              <p>A professional message of confidence, partnership and successful service delivery for clients who need dependable advisory support.</p>
+            <div class="ta-notice-body">
+              <h3>Tax and records awareness</h3>
+              <p>Practical reminders on how tax errors, poor bookkeeping and weak compliance systems can expose a business to avoidable financial risk.</p>
+            </div>
+          </article>
+
+          <article class="ta-notice-card">
+            <div class="ta-notice-image-wrap">
+              <span class="ta-notice-badge">Client confidence</span>
+              <img src="assets/adverts/taxorithm-client-satisfaction-handshake.png" alt="Taxorithm Advisory client confidence message showing satisfied professionals shaking hands" loading="lazy" />
+            </div>
+            <div class="ta-notice-body">
+              <h3>Trusted advisory partnership</h3>
+              <p>A professional message of confidence, service quality and dependable support for clients seeking practical and ethical business solutions.</p>
             </div>
           </article>
         </div>
 
-        <div class="ta-adverts-cta">
+        <div class="ta-notices-cta">
           <div>
             <h3>Need tax, accounting, audit, registration or digital business support?</h3>
             <p>Speak to Taxorithm Advisory for practical, ethical and results-driven support across compliance, reporting, controls, data and technology.</p>
