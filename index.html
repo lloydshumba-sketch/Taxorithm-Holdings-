@@ -24,18 +24,248 @@
   <link rel="stylesheet" href="/style.css" />
 
   <style>
-    /*
-      INDEX SAFETY OVERRIDES
-      These are intentionally small.
-      They stop advert text from overlapping images and make the mobile bars solid.
-    */
+    .executive-hero {
+      padding: 72px 0 46px;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(49, 215, 255, 0.12), transparent 28rem),
+        radial-gradient(circle at 88% 12%, rgba(216, 166, 58, 0.08), transparent 24rem),
+        linear-gradient(135deg, #020b14 0%, #061c33 48%, #082846 100%);
+    }
 
-    .ta-notices-section {
+    .executive-hero::before {
+      opacity: 0.28;
+    }
+
+    .executive-hero-wrap {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(430px, 0.78fr);
+      gap: 44px;
+      align-items: stretch;
+      padding: 42px;
+      border-radius: 36px;
+      background:
+        linear-gradient(135deg, rgba(3, 19, 35, 0.98), rgba(6, 28, 51, 0.96)),
+        radial-gradient(circle at 80% 12%, rgba(49, 215, 255, 0.13), transparent 20rem);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.36);
       overflow: hidden;
     }
 
-    .ta-notices-head {
-      gap: 34px;
+    .executive-hero-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 54px 54px;
+      opacity: 0.38;
+      pointer-events: none;
+    }
+
+    .executive-hero-copy,
+    .executive-command-panel {
+      position: relative;
+      z-index: 2;
+    }
+
+    .executive-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 560px;
+      padding: 10px 0;
+    }
+
+    .executive-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      width: fit-content;
+      margin-bottom: 24px;
+      color: #f2c75c;
+      font-size: 0.76rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+    }
+
+    .executive-kicker::before {
+      content: "";
+      width: 38px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #f2c75c, #31d7ff);
+    }
+
+    .executive-hero-copy h1 {
+      max-width: 780px;
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(2.7rem, 5.5vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+    }
+
+    .executive-lead {
+      max-width: 760px;
+      margin: 26px 0 0;
+      color: #edf6ff;
+      font-size: 1.08rem;
+      line-height: 1.82;
+      font-weight: 520;
+    }
+
+    .executive-assurance-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+      max-width: 760px;
+    }
+
+    .executive-assurance-strip span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.085);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      font-size: 0.76rem;
+      font-weight: 850;
+    }
+
+    .executive-actions {
+      margin-top: 34px;
+    }
+
+    .executive-command-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 560px;
+      padding: 30px;
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.055)),
+        linear-gradient(135deg, rgba(2, 11, 20, 0.96), rgba(6, 28, 51, 0.90));
+      border: 1px solid rgba(49, 215, 255, 0.24);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.11),
+        0 24px 60px rgba(0, 0, 0, 0.22);
+    }
+
+    .command-panel-head {
+      padding-bottom: 22px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .command-panel-head span {
+      display: block;
+      color: #f2c75c;
+      font-size: 0.72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 10px;
+    }
+
+    .command-panel-head h2 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(1.55rem, 2.2vw, 2.15rem);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    .command-stage-list {
+      display: grid;
+      gap: 15px;
+      margin: 24px 0;
+    }
+
+    .command-stage {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 17px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.075);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .stage-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, rgba(11, 111, 240, 0.95), rgba(49, 215, 255, 0.28));
+      color: #ffffff;
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .command-stage h3 {
+      margin: 0 0 6px;
+      color: #ffffff;
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+
+    .command-stage p {
+      margin: 0;
+      color: #dce8f6;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .command-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .command-footer strong {
+      display: block;
+      color: #ffffff;
+      font-size: 0.98rem;
+      margin-bottom: 5px;
+    }
+
+    .command-footer span {
+      display: block;
+      color: #cfe0f2;
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .command-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 10px 15px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #061c33;
+      font-size: 0.82rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .ta-notices-section {
+      overflow: hidden;
     }
 
     .ta-notices-grid {
@@ -128,14 +358,56 @@
     }
 
     @media (max-width: 1060px) {
+      .executive-hero-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .executive-hero-copy,
+      .executive-command-panel {
+        min-height: auto;
+      }
+
       .menu-btn {
         display: inline-flex !important;
       }
     }
 
     @media (max-width: 720px) {
-      .ta-notices-head {
-        gap: 18px;
+      .executive-hero {
+        padding: 36px 0 28px;
+      }
+
+      .executive-hero-wrap {
+        padding: 24px;
+        border-radius: 28px;
+        gap: 28px;
+      }
+
+      .executive-hero-copy h1 {
+        font-size: clamp(2.15rem, 12vw, 3.3rem);
+        line-height: 1;
+      }
+
+      .executive-lead {
+        font-size: 0.98rem;
+        line-height: 1.7;
+      }
+
+      .executive-command-panel {
+        padding: 22px;
+        border-radius: 24px;
+      }
+
+      .command-stage {
+        grid-template-columns: 1fr;
+      }
+
+      .command-footer {
+        display: grid;
+      }
+
+      .command-link {
+        width: 100%;
       }
 
       .ta-notices-grid {
@@ -144,16 +416,6 @@
 
       .ta-notice-body {
         padding: 22px;
-      }
-
-      .hero-card,
-      .section-head,
-      .process-grid,
-      .service-grid,
-      .trust-rail,
-      .split-feature,
-      .footer-grid {
-        gap: 22px;
       }
     }
   </style>
@@ -257,69 +519,86 @@
   </div>
 
   <main>
-    <header class="hero">
-      <div class="container hero-card home-hero-clean">
-        <div class="hero-copy">
-          <div class="eyebrow">Integrated advisory · Technical discipline · Digital execution</div>
+    <header class="hero executive-hero">
+      <div class="container executive-hero-wrap">
+        <section class="executive-hero-copy" aria-label="Taxorithm Advisory professional introduction">
+          <div class="executive-kicker">
+            Integrated Advisory · Compliance · Data · Technology
+          </div>
 
-          <h1>Professional advisory with <span>digital precision.</span></h1>
+          <h1>
+            Serious advisory for businesses that need discipline, control and digital execution.
+          </h1>
 
-          <p>
-            Taxorithm Advisory is an integrated platform for businesses that need tax compliance,
-            accounting support, audit discipline, forensic insight, data-led reporting and
-            technology-enabled execution from one coordinated professional service provider.
+          <p class="executive-lead">
+            Taxorithm Advisory supports clients with tax compliance, accounting records,
+            audit discipline, forensic insight, data-led reporting and technology-enabled
+            business infrastructure.
           </p>
 
-          <p class="hero-subcopy">
-            We help clients move confidently from business setup and regulatory compliance
-            to reporting, controls, digital systems and long-term business infrastructure.
-          </p>
-
-          <div class="hero-actions">
-            <a href="/services/" class="btn btn-primary click-animate">Explore services</a>
-            <a href="/contact/" class="btn btn-outline click-animate">Send enquiry</a>
-          </div>
-        </div>
-
-        <aside class="hero-tech-panel" aria-label="Technology enabled advisory model">
-          <div class="tech-card-main">
-            <h3>Integrated business intelligence layer</h3>
-            <p>
-              Compliance, accounting records, controls, forensic review, data analytics and
-              digital infrastructure are treated as one connected operating system.
-            </p>
-          </div>
-
-          <div class="tech-metrics">
-            <div class="tech-metric">
-              <strong>Tax</strong>
-              <span>Registration, compliance, planning and advisory support.</span>
-            </div>
-
-            <div class="tech-metric">
-              <strong>Data</strong>
-              <span>Dashboards, analytics and decision-ready reporting.</span>
-            </div>
-
-            <div class="tech-metric">
-              <strong>Audit</strong>
-              <span>Controls, governance, risk and review discipline.</span>
-            </div>
-
-            <div class="tech-metric">
-              <strong>Tech</strong>
-              <span>Web, systems, corporate email and digital infrastructure.</span>
-            </div>
-          </div>
-
-          <div class="tech-stack" aria-label="Service capabilities">
+          <div class="executive-assurance-strip" aria-label="Professional service focus areas">
             <span>Tax Compliance</span>
-            <span>Bookkeeping</span>
-            <span>Financial Statements</span>
-            <span>Internal Controls</span>
-            <span>Forensics</span>
-            <span>Business Intelligence</span>
+            <span>Accounting Records</span>
+            <span>Audit Support</span>
+            <span>Forensic Insight</span>
             <span>Digital Systems</span>
+          </div>
+
+          <div class="hero-actions executive-actions">
+            <a href="/services/" class="btn btn-primary click-animate">Explore services</a>
+            <a href="/contact/" class="btn btn-outline click-animate">Request consultation</a>
+          </div>
+        </section>
+
+        <aside class="executive-command-panel" aria-label="Taxorithm Advisory operating model">
+          <div class="command-panel-head">
+            <div>
+              <span>Operating Model</span>
+              <h2>From registration to reporting discipline.</h2>
+            </div>
+          </div>
+
+          <div class="command-stage-list">
+            <div class="command-stage">
+              <span class="stage-number">01</span>
+              <div>
+                <h3>Business setup</h3>
+                <p>Company registration, ZIMRA guidance, NSSA guidance, corporate email and web presence.</p>
+              </div>
+            </div>
+
+            <div class="command-stage">
+              <span class="stage-number">02</span>
+              <div>
+                <h3>Compliance structure</h3>
+                <p>Tax registrations, returns support, bookkeeping discipline and statutory follow-up.</p>
+              </div>
+            </div>
+
+            <div class="command-stage">
+              <span class="stage-number">03</span>
+              <div>
+                <h3>Reporting intelligence</h3>
+                <p>Financial statements, management reports, dashboards and decision-ready business information.</p>
+              </div>
+            </div>
+
+            <div class="command-stage">
+              <span class="stage-number">04</span>
+              <div>
+                <h3>Control and assurance</h3>
+                <p>Internal controls, audit support, forensic review, governance improvement and risk discipline.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="command-footer">
+            <div>
+              <strong>One advisory platform</strong>
+              <span>Tax · Accounting · Audit · Forensics · Data · Technology</span>
+            </div>
+
+            <a href="/contact/" class="command-link click-animate">Start enquiry</a>
           </div>
         </aside>
       </div>
