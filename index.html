@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <meta name="description" content="Taxorithm Advisory is an integrated platform for tax, accounting, audit, forensics, data and technology solutions." />
   <meta name="theme-color" content="#dff4ff" />
+
   <meta property="og:title" content="Taxorithm Advisory | Tax, Accounting, Audit, Forensics &amp; Technology" />
   <meta property="og:description" content="Taxorithm Advisory is an integrated platform for tax, accounting, audit, forensics, data and technology solutions." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://taxorithm.us/" />
+  <meta property="og:image" content="https://taxorithm.us/assets/adverts/taxorithm-client-satisfaction-handshake.png" />
+
   <title>Taxorithm Advisory | Tax, Accounting, Audit, Forensics &amp; Technology</title>
+
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="%23062b4f"/><path d="M15 18h34v8H36v22h-8V26H15z" fill="%2347c3ff"/><path d="M16 48c15-22 30-28 42-30" stroke="%23d6a64a" stroke-width="4" fill="none" stroke-linecap="round"/></svg>' />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -38,17 +44,237 @@
       margin-top: 14px;
     }
 
+    .ta-adverts-section {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(71, 195, 255, 0.12), transparent 34%),
+        linear-gradient(135deg, #f7fcff 0%, #ffffff 52%, #eef8ff 100%);
+      padding: clamp(56px, 7vw, 92px) 0;
+      border-top: 1px solid rgba(6, 43, 79, 0.08);
+      border-bottom: 1px solid rgba(6, 43, 79, 0.08);
+    }
+
+    .ta-adverts-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, transparent 0%, transparent 62%, rgba(6, 43, 79, 0.06) 62%, rgba(6, 43, 79, 0.06) 100%);
+      pointer-events: none;
+    }
+
+    .ta-adverts-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .ta-adverts-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1.05fr);
+      gap: clamp(24px, 4vw, 56px);
+      align-items: end;
+      margin-bottom: clamp(28px, 4vw, 44px);
+    }
+
+    .ta-adverts-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(6, 43, 79, 0.08);
+      color: #062b4f;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .ta-adverts-label::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #d6a64a;
+      box-shadow: 0 0 0 5px rgba(214, 166, 74, 0.18);
+    }
+
+    .ta-adverts-head h2 {
+      margin: 0;
+      color: #062b4f;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.03;
+      letter-spacing: -0.055em;
+    }
+
+    .ta-adverts-head p {
+      margin: 0;
+      color: rgba(6, 43, 79, 0.76);
+      font-size: clamp(1rem, 1.3vw, 1.12rem);
+      line-height: 1.75;
+    }
+
+    .ta-adverts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(18px, 2.4vw, 28px);
+    }
+
+    .ta-advert-card {
+      position: relative;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid rgba(6, 43, 79, 0.1);
+      border-radius: 28px;
+      box-shadow: 0 24px 70px rgba(6, 43, 79, 0.11);
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+    }
+
+    .ta-advert-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 34px 90px rgba(6, 43, 79, 0.17);
+      border-color: rgba(214, 166, 74, 0.45);
+    }
+
+    .ta-advert-image-wrap {
+      position: relative;
+      overflow: hidden;
+      background: #062b4f;
+      aspect-ratio: 4 / 5;
+    }
+
+    .ta-advert-image-wrap img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .ta-advert-card:hover img {
+      transform: scale(1.035);
+    }
+
+    .ta-advert-badge {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(6, 43, 79, 0.88);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(214, 166, 74, 0.55);
+      backdrop-filter: blur(10px);
+    }
+
+    .ta-advert-body {
+      padding: 22px 22px 24px;
+    }
+
+    .ta-advert-body h3 {
+      margin: 0 0 9px;
+      color: #062b4f;
+      font-size: 1.05rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .ta-advert-body p {
+      margin: 0;
+      color: rgba(6, 43, 79, 0.7);
+      font-size: 0.93rem;
+      line-height: 1.6;
+    }
+
+    .ta-adverts-cta {
+      margin-top: clamp(24px, 4vw, 42px);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      padding: clamp(22px, 3vw, 32px);
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(6, 43, 79, 0.98), rgba(6, 43, 79, 0.9)),
+        radial-gradient(circle at top right, rgba(214, 166, 74, 0.34), transparent 34%);
+      color: #ffffff;
+      box-shadow: 0 24px 70px rgba(6, 43, 79, 0.18);
+      border: 1px solid rgba(214, 166, 74, 0.32);
+    }
+
+    .ta-adverts-cta h3 {
+      margin: 0 0 8px;
+      font-size: clamp(1.25rem, 2vw, 1.7rem);
+      letter-spacing: -0.03em;
+    }
+
+    .ta-adverts-cta p {
+      margin: 0;
+      max-width: 720px;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.65;
+    }
+
+    .ta-adverts-cta .btn {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 960px) {
+      .ta-adverts-head {
+        grid-template-columns: 1fr;
+      }
+
+      .ta-adverts-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ta-advert-card {
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+      .ta-adverts-cta {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
     @media (max-width: 720px) {
       .home-hero-clean {
         padding: 28px;
       }
+
+      .ta-adverts-section {
+        padding: 48px 0;
+      }
+
+      .ta-advert-card {
+        border-radius: 22px;
+      }
+
+      .ta-advert-body {
+        padding: 18px;
+      }
+
+      .ta-adverts-cta {
+        border-radius: 22px;
+      }
     }
   </style>
-
 </head>
 
 <body class="home-page">
-  <a class="whatsapp" href="https://wa.me/263652322495" target="_blank" rel="noopener" aria-label="Contact Taxorithm Advisory on WhatsApp">☎</a>
+  <a class="whatsapp" href="https://wa.me/263783776685" target="_blank" rel="noopener" aria-label="Contact Taxorithm Advisory on WhatsApp">☎</a>
 
   <div class="topbar">
     <div class="container topbar-inner">
@@ -74,11 +300,11 @@
 
       <div class="nav-links" aria-label="Main navigation">
         <a href="/" class="active">Home</a>
-<a href="/about/" class="">About</a>
-<a href="/services/" class="">Services</a>
-<a href="/tax/" class="">Tax</a>
-<a href="/registration/" class="">Registration</a>
-<a href="/contact/" class="">Contact</a>
+        <a href="/about/" class="">About</a>
+        <a href="/services/" class="">Services</a>
+        <a href="/tax/" class="">Tax</a>
+        <a href="/registration/" class="">Registration</a>
+        <a href="/contact/" class="">Contact</a>
         <a href="/policies/">Policies</a>
       </div>
 
@@ -91,11 +317,11 @@
     <button class="close-btn" id="closeBtn" type="button" aria-label="Close menu">×</button>
     <div class="mobile-links">
       <a href="/" class="active">Home</a>
-<a href="/about/" class="">About</a>
-<a href="/services/" class="">Services</a>
-<a href="/tax/" class="">Tax</a>
-<a href="/registration/" class="">Registration</a>
-<a href="/contact/" class="">Contact</a>
+      <a href="/about/" class="">About</a>
+      <a href="/services/" class="">Services</a>
+      <a href="/tax/" class="">Tax</a>
+      <a href="/registration/" class="">Registration</a>
+      <a href="/contact/" class="">Contact</a>
       <a href="/policies/">Privacy, Ethics &amp; Payments</a>
     </div>
   </div>
@@ -137,7 +363,6 @@
       </div>
     </section>
 
-
     <section class="section">
       <div class="container">
         <div class="section-head">
@@ -178,24 +403,82 @@
             <p>Tax registrations, compliance reviews, tax planning, returns support and written guidance on practical tax matters.</p>
             <a class="service-link" href="/tax/">View tax services</a>
           </article>
+
           <article class="service-card accent">
             <div class="number">Audit</div>
             <h3>Audit</h3>
             <p>Internal audit, controls review, governance assessment, risk support and forensic investigation assistance.</p>
             <a class="service-link" href="/services/">View audit support</a>
           </article>
+
           <article class="service-card accent">
             <div class="number">Data</div>
             <h3>Data</h3>
             <p>Analytics, business intelligence, dashboards, reporting insight and data-led decision support.</p>
             <a class="service-link" href="/services/">View data services</a>
           </article>
+
           <article class="service-card accent">
             <div class="number">Digital</div>
             <h3>Digital</h3>
             <p>Websites, corporate emails, software development, IT systems and digital business infrastructure.</p>
             <a class="service-link" href="/services/">View digital services</a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ta-adverts-section" aria-label="Taxorithm Advisory promotional adverts">
+      <div class="container ta-adverts-inner">
+        <div class="ta-adverts-head">
+          <div>
+            <div class="ta-adverts-label">Featured business insights</div>
+            <h2>Professional adverts designed to communicate trust, compliance and growth.</h2>
+          </div>
+          <p>Explore Taxorithm Advisory’s service messages for startups, SMEs and established businesses seeking tax compliance, accounting discipline, audit support, forensic insight, data analytics and digital execution.</p>
+        </div>
+
+        <div class="ta-adverts-grid">
+          <article class="ta-advert-card">
+            <div class="ta-advert-image-wrap">
+              <span class="ta-advert-badge">Introduction</span>
+              <img src="assets/adverts/taxorithm-introduction-advert.png" alt="Taxorithm Advisory professional introduction advert showing services offered" loading="lazy" />
+            </div>
+            <div class="ta-advert-body">
+              <h3>Professional service introduction</h3>
+              <p>A concise overview of the advisory, tax, accounting, audit, training, data and digital solutions offered by Taxorithm Advisory.</p>
+            </div>
+          </article>
+
+          <article class="ta-advert-card">
+            <div class="ta-advert-image-wrap">
+              <span class="ta-advert-badge">Did you know?</span>
+              <img src="assets/adverts/taxorithm-did-you-know-megaphone.png" alt="Taxorithm Advisory did you know advert about tax errors, weak records and compliance gaps" loading="lazy" />
+            </div>
+            <div class="ta-advert-body">
+              <h3>Compliance awareness</h3>
+              <p>A direct message highlighting how poor records, tax errors and compliance gaps can quietly weaken business performance.</p>
+            </div>
+          </article>
+
+          <article class="ta-advert-card">
+            <div class="ta-advert-image-wrap">
+              <span class="ta-advert-badge">Client satisfaction</span>
+              <img src="assets/adverts/taxorithm-client-satisfaction-handshake.png" alt="Taxorithm Advisory client satisfaction advert showing male and female professionals shaking hands" loading="lazy" />
+            </div>
+            <div class="ta-advert-body">
+              <h3>Trusted business support</h3>
+              <p>A professional message of confidence, partnership and successful service delivery for clients who need dependable advisory support.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="ta-adverts-cta">
+          <div>
+            <h3>Need tax, accounting, audit, registration or digital business support?</h3>
+            <p>Speak to Taxorithm Advisory for practical, ethical and results-driven support across compliance, reporting, controls, data and technology.</p>
+          </div>
+          <a href="/contact/" class="btn btn-primary">Talk to us today</a>
         </div>
       </div>
     </section>
@@ -209,9 +492,20 @@
         </div>
 
         <div class="framework-list">
-          <div class="framework-row"><h3>Formation</h3><p>Company registration, ZIMRA guidance, NSSA guidance, corporate emails, website presence and launch documentation.</p></div>
-          <div class="framework-row"><h3>Finance and reporting</h3><p>Bookkeeping, financial statements, management accounting, dashboards and reporting improvement.</p></div>
-          <div class="framework-row"><h3>Controls and technology</h3><p>Internal controls, forensic review, data analytics, IT systems and technology-enabled operating support.</p></div>
+          <div class="framework-row">
+            <h3>Formation</h3>
+            <p>Company registration, ZIMRA guidance, NSSA guidance, corporate emails, website presence and launch documentation.</p>
+          </div>
+
+          <div class="framework-row">
+            <h3>Finance and reporting</h3>
+            <p>Bookkeeping, financial statements, management accounting, dashboards and reporting improvement.</p>
+          </div>
+
+          <div class="framework-row">
+            <h3>Controls and technology</h3>
+            <p>Internal controls, forensic review, data analytics, IT systems and technology-enabled operating support.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -256,11 +550,10 @@
         <h4>Contact</h4>
         <ul class="footer-contact">
           <li><a href="mailto:info@taxorithm.us">info@taxorithm.us</a></li>
-          <li><a href="mailto:tax@taxorithm.us">tax@taxorithm.us</a></li>
-          <li><a href="mailto:registrations@taxorithm.us">registrations@taxorithm.us</a></li>
-          <li><a href="mailto:accounts@taxorithm.us">accounts@taxorithm.us</a></li>
-          <li><a href="mailto:forensics@taxorithm.us">forensics@taxorithm.us</a></li>
-          <li><a href="tel:+263652322495">+263 65 232 2495</a></li>
+          <li><a href="mailto:advisory@taxorithm.us">advisory@taxorithm.us</a></li>
+          <li><a href="tel:+263773508048">+263 77 350 8048</a></li>
+          <li><a href="https://wa.me/263783776685" target="_blank" rel="noopener">WhatsApp: +263 78 377 6685</a></li>
+          <li><a href="https://www.taxorithm.us/" target="_blank" rel="noopener">www.taxorithm.us</a></li>
         </ul>
       </div>
     </div>
